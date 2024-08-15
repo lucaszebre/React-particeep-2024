@@ -23,7 +23,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,
   const likeRatio = totalVotes > 0 ? (likesState / totalVotes) * 100 : 0;
 
   return (
-    <Card className="w-64 relative m-4">
+    <Card className="w-full  relative ">
       <CardHeader className='flex flex-row items-center justify-between w-full'>
         <CardTitle className="font-bold text-lg">{title}</CardTitle>
         <Button variant={"ghost"}>
