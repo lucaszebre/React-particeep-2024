@@ -10,6 +10,7 @@ export default function Home() {
 
   const [movies,setMovies]=useState<Movie[]>()
   const [categorie,setCategorie]=useState<string>("novalue")
+  const [amount,setAmount]=useState<number>(10)
   const [ListCategorie,setListCategorie]=useState<string[]>()
   const [IsLoading,setIsLoading]=useState(false)
   const [error,setError]=useState(false)
@@ -45,17 +46,6 @@ export default function Home() {
     }
   },[movies])
 
-
-
-
-
-
-
-
-
-
-
-
   if(IsLoading){
     return (
       <p>...Loading</p>
@@ -79,6 +69,11 @@ export default function Home() {
   
   function changeCategorie(categorie:string){
     setCategorie(categorie)
+  } 
+  
+  function changeAmount(amount:string){
+    let AmountNumber = parseInt(amount)
+    setAmount(AmountNumber)
   }
 
 
@@ -99,6 +94,18 @@ export default function Home() {
           })
       }
     </SelectContent>
+</Select> 
+
+<Select onValueChange={changeAmount}>
+    <SelectTrigger className="w-[180px]">
+      <SelectValue placeholder="Amout movie" />
+    </SelectTrigger>
+    <SelectContent>
+          <SelectItem value={"100"}>No Amount</SelectItem>
+          <SelectItem  value="4">4</SelectItem>
+          <SelectItem value="8">8</SelectItem>
+    
+    </SelectContent>
 </Select>
 
 {
@@ -107,7 +114,7 @@ export default function Home() {
    {movies &&
       movies.map((movie)=>{
         return <MovieCard key={movie.id} id={movie.id} title={movie.title} category={movie.category} deleteMovie={deleteMovie} likes={movie.likes} dislikes={movie.dislikes} posterUrl={movie.posterUrl} />
-      })
+      }).slice(0,amount!)
     }
   </>
   ||
@@ -117,7 +124,7 @@ export default function Home() {
         return movie.category == categorie
       }).map((movie)=>{
         return <MovieCard key={movie.id} id={movie.id} title={movie.title} category={movie.category} deleteMovie={deleteMovie} likes={movie.likes} dislikes={movie.dislikes} posterUrl={movie.posterUrl} />
-      })
+      }).slice(0,amount)
     }
   </>
 }
