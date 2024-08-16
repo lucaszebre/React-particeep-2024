@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Compte Rendu : Projet de Liste de Films
 
-## Getting Started
+## Objectif
+Développer une application web pour afficher et gérer une liste de films avec des fonctionnalités spécifiques.
 
-First, run the development server:
+## Version Live
+🔗 [Voir le projet en action](https://lien-vers-votre-projet.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Stack Technique
+- Next.js
+- shadcn/ui
+- Tailwind CSS
+- Gestion d'état locale (sans Redux)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Fonctionnalités Réalisées
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Affichage des Films
+   - Cartes responsives avec titre, catégorie, et jauge likes/dislikes
+   - Layout adaptatif (responsive)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Interactions Utilisateur
+   - Bouton de suppression par carte
+   - Toggle like/dislike
 
-## Learn More
+3. Filtrage
+   - Filtre multiselect par catégorie
+   - Catégories générées dynamiquement
+   - Mise à jour automatique des catégories disponibles
 
-To learn more about Next.js, take a look at the following resources:
+4. Pagination
+   - Navigation précédent/suivant
+   - Sélection du nombre d'éléments par page (4, 8, 12)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Bonus
+- Ajout d'images pour les films
+- Possibilité de visionner le trailer
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Points Clés de l'Implémentation
+- Utilisation de composants headless pour l'accessibilité
+- Gestion efficace de l'état local pour les filtres et la pagination
+- Design responsive avec Tailwind CSS
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Conclusion
+Le projet répond à toutes les exigences demandées, avec l'ajout de fonctionnalités bonus pour améliorer l'expérience utilisateur. L'utilisation de technologies modernes assure une base solide pour de futures extensions.

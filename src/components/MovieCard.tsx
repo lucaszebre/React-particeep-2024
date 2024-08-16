@@ -15,7 +15,7 @@ interface MovieCardProps extends Movie {
   deleteMovie:(id:string)=>void
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,trailer, posterUrl,id,deleteMovie }) => {
+const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,trailerUrl, posterUrl,id,deleteMovie }) => {
   const [likesState,setLikes]=useState(likes)
   const [DislikesState,setDisLikes]=useState(dislikes)
   const [isLike,setIslike]=useState<boolean>()
@@ -24,8 +24,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,
   const likeRatio = totalVotes > 0 ? (likesState / totalVotes) * 100 : 0;
 
   return (
-    <TrailerDialog  trailer={trailer}>
-      <Card className="w-full  relative  cursor-pointer">
+      <Card className="w-full  relative  ">
         <CardHeader className='flex flex-row items-center justify-between w-full'>
           <CardTitle className="font-bold text-lg">{title}</CardTitle>
           <Button variant={"ghost"}>
@@ -36,10 +35,14 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,
       
         </CardHeader>
         <CardContent className='flex flex-col gap-2'>
-          <div className='h-[300px] relative rounded-lg'>
+        <TrailerDialog title={title}  trailerUrl={trailerUrl}>
+
+          <div className='h-[300px] cursor-pointer relative rounded-lg'>
           <Image src={posterUrl} alt={`Affiche de ${title}`}  fill />
 
           </div>
+          </TrailerDialog>
+
           <p className="text-sm mb-2">Catégorie : {category}</p>
           <div className="relative h-2 bg-gray-200 rounded">
             <div
@@ -109,7 +112,6 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,
           </div>
         </CardContent>
       </Card>
-    </TrailerDialog>
   
   );
 };

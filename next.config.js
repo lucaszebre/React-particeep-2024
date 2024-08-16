@@ -1,4 +1,3 @@
-const { withNextVideo } = require('next-video/process')
 
 module.exports = {
     images: {
