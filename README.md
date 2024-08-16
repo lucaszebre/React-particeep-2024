@@ -4,7 +4,7 @@
 Développer une application web pour afficher et gérer une liste de films avec des fonctionnalités spécifiques.
 
 ## Version Live
-🔗 [Voir le projet en action](https://lien-vers-votre-projet.com)
+🔗 [Voir le projet en action](https://react-particeep.vercel.app/)
 
 ## Stack Technique
 - Next.js

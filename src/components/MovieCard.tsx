@@ -35,10 +35,11 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,
       
         </CardHeader>
         <CardContent className='flex flex-col gap-2'>
-        <TrailerDialog title={title}  trailerUrl={trailerUrl}>
+          <TrailerDialog title={title}  trailerUrl={trailerUrl}>
 
           <div className='h-[300px] cursor-pointer relative rounded-lg'>
-          <Image src={posterUrl} alt={`Affiche de ${title}`}  fill />
+            
+            <Image src={posterUrl} alt={`Affiche de ${title}`}  fill />
 
           </div>
           </TrailerDialog>
@@ -53,61 +54,61 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, category, likes, dislikes,
           <div className="flex justify-between items-center text-xs mt-2">
             <div className="flex items-center">
               
-              {
-                isLike ? 
-                <FaThumbsUp  size={16}  
-                onClick={()=>{
-                    if(isLike){
-                      setLikes(likesState=>likesState-1)
-                      setIslike(false) 
-                    
-                    }
+                {
+                  isLike ? 
+                  <FaThumbsUp  size={16}  
+                  onClick={()=>{
+                      if(isLike){
+                        setLikes(likesState=>likesState-1)
+                        setIslike(false) 
+                      
+                      }
 
-                
-                }} 
-                className="text-green-500 mr-1 cursor-pointer" />
-                :
-                <FaRegThumbsUp
-                onClick={()=>{
-                  if(!isLike){
-                    setLikes(likesState=>likesState+1)
-                    setIslike(true)
-                    if(isDisLike){
-                      setDisLikes(likesState=>likesState-1)
-                      setIsDislike(false)
+                  
+                  }} 
+                  className="text-green-500 mr-1 cursor-pointer" />
+                  :
+                  <FaRegThumbsUp
+                  onClick={()=>{
+                    if(!isLike){
+                      setLikes(likesState=>likesState+1)
+                      setIslike(true)
+                      if(isDisLike){
+                        setDisLikes(likesState=>likesState-1)
+                        setIsDislike(false)
+                      }
                     }
-                  }
-                }}
-                size={16}  className="text-green-500 mr-1 cursor-pointer" />
-              }
-        
-              <span>{likesState}</span>
+                  }}
+                  size={16}  className="text-green-500 mr-1 cursor-pointer" />
+                }
+          
+                <span>{likesState}</span>
             </div>
             <div className="flex items-center">
-            {
-                isDisLike ? <FaThumbsDown  size={16}  onClick={()=>{
-                  if(isDisLike){
-                    setDisLikes(likesState=>likesState-1)
-                    setIsDislike(false) 
-                    
-                  }
-                }}  className="text-red-500 mr-1 cursor-pointer" />
-                :
-                <FaRegThumbsDown
-                onClick={()=>{
-                  if(!isDisLike){
-                    setDisLikes(likesState=>likesState+1)
-                    setIsDislike(true)
-                    if(isLike){
-                      setLikes(likesState=>likesState-1)
-                      setIslike(false)
+              {
+                  isDisLike ? <FaThumbsDown  size={16}  onClick={()=>{
+                    if(isDisLike){
+                      setDisLikes(likesState=>likesState-1)
+                      setIsDislike(false) 
+                      
                     }
-                  }
-                }}
-                size={16}   className="text-red-500 mr-1 cursor-pointer" />
-              }
-              
-              <span>{DislikesState}</span>
+                  }}  className="text-red-500 mr-1 cursor-pointer" />
+                  :
+                  <FaRegThumbsDown
+                  onClick={()=>{
+                    if(!isDisLike){
+                      setDisLikes(likesState=>likesState+1)
+                      setIsDislike(true)
+                      if(isLike){
+                        setLikes(likesState=>likesState-1)
+                        setIslike(false)
+                      }
+                    }
+                  }}
+                  size={16}   className="text-red-500 mr-1 cursor-pointer" />
+                }
+                
+                <span>{DislikesState}</span>
             </div>
           </div>
         </CardContent>
