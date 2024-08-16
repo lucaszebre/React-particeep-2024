@@ -21,9 +21,12 @@ export default function Home() {
   // at the mount we fetch all the movies 
   useEffect(()=>{
     setIsLoading(true)
-      movies$.then((data)=>{
-        setMovies(data);
+      movies$.then((data )=>{
+        let Movies = data as Movie[];
+        setMovies(Movies);
         setIsLoading(false);
+        setAmount(Movies.length)
+
       }).catch((err)=>{
         setIsLoading(false)
         setError(true)
@@ -62,7 +65,7 @@ export default function Home() {
   }
 
 
-   if(!movies && !IsLoading){
+   if(!movies ){
      return(
        <p className="text-2xl text-black" >Look like you delete all the movies</p>
      )
@@ -85,7 +88,6 @@ export default function Home() {
     let AmountNumber = parseInt(amount)
     setAmount(AmountNumber)
   }
-
 
 
 
@@ -118,76 +120,82 @@ export default function Home() {
         
         </SelectContent>
     </Select>
-   </div>
+  </div>
    
 
 
-<div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-4">
+  <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 mb-4">
    
     
 
-{
-  categorie=="novalue" &&
-  <>
-   {movies &&
-      movies.map((movie)=>{
-        return <MovieCard key={movie.id} id={movie.id} title={movie.title} category={movie.category} deleteMovie={deleteMovie} likes={movie.likes} dislikes={movie.dislikes} posterUrl={movie.posterUrl} />
-      }).slice(0+amount*pagination,amount*(1+pagination)!)
-    }
-  </>
-  ||
-  <>
-       {movies &&
-      movies.filter((movie:Movie)=>{
-        return movie.category == categorie
-      }).map((movie)=>{
-        return <MovieCard key={movie.id} id={movie.id} title={movie.title} category={movie.category} deleteMovie={deleteMovie} likes={movie.likes} dislikes={movie.dislikes} posterUrl={movie.posterUrl} />
-      }).slice(0+amount*pagination,amount*(1+pagination)!)
-    }
-  </>
-}
-
-</div>
-
-
-
-{
-  amount!==100  && 
-  
-  <Pagination className="mt-4 mb-4">
-  <PaginationContent>
-    <PaginationItem>
       {
-        pagination >= 1 &&
-        <PaginationPrevious 
-        className="cursor-pointer"
-        onClick={()=>{
-          if(pagination>=1){
-            setPagination(pagination=>pagination-1)
-  
+        categorie=="novalue" &&
+        <>
+        {movies &&
+            movies.map((movie)=>{
+              return <MovieCard key={movie.id} trailer={movie.trailer} id={movie.id} title={movie.title} category={movie.category} deleteMovie={deleteMovie} likes={movie.likes} dislikes={movie.dislikes} posterUrl={movie.posterUrl} />
+            }).slice(0+amount*pagination,amount*(1+pagination)!)
           }
-        }} 
-        
-        />
+        </>
+        ||
+        <>
+            {movies &&
+            movies.filter((movie:Movie)=>{
+              return movie.category == categorie
+            }).map((movie)=>{
+              return <MovieCard key={movie.id} trailer={movie.trailer} id={movie.id} title={movie.title} category={movie.category} deleteMovie={deleteMovie} likes={movie.likes} dislikes={movie.dislikes} posterUrl={movie.posterUrl} />
+            }).slice(0+amount*pagination,amount*(1+pagination)!)
+          }
+        </>
       }
-   
-    </PaginationItem>
-    
-    <PaginationItem>
-     
-      <PaginationNext  
-      className="cursor-pointer"  
-      onClick={()=>{
-          setPagination(pagination=>pagination+1)
 
-        
-      }} 
+  </div>
+
+
+
+
+{/*  here i need to check if the total amount is lower than the amount we choose  */}
+    {
+      amount!==movies.length && amount< movies.length  && 
       
-      />   
-    </PaginationItem>
-  </PaginationContent>
-</Pagination>
-}
+      <Pagination className="mt-4 mb-4">
+      <PaginationContent>
+        <PaginationItem>
+          {
+            pagination >= 1 &&
+            <PaginationPrevious 
+            className="cursor-pointer"
+            onClick={()=>{
+              if(pagination>=1){
+                setPagination(pagination=>pagination-1)
+      
+              }
+            }} 
+            
+            />
+          }
+      
+        </PaginationItem>
+
+
+        {
+
+    pagination < Math.floor(movies?.length / amount) && 
+    <PaginationItem>
+        <PaginationNext  
+          className="cursor-pointer"  
+          onClick={()=>{
+              setPagination(pagination=>pagination+1)
+          }} 
+
+          />   
+        </PaginationItem>
+          
+    }   
+        
+      </PaginationContent>
+    </Pagination>
+    }
    
    </>
   );

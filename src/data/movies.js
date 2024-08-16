@@ -5,49 +5,48 @@ const movies = [
       category: 'Comedy',
       likes: 4,
       dislikes: 1,
-      posterUrl:"https://m.media-amazon.com/images/M/MV5BNzM1MDFlNzgtNWQyMC00ODVjLTkxMjQtZmEzZDZkYmUzN2EwXkEyXkFqcGdeQXVyMTEzOTk1NDk@._V1_QL75_UY562_CR14,0,380,562_.jpg"
+      posterUrl:"https://m.media-amazon.com/images/M/MV5BNzM1MDFlNzgtNWQyMC00ODVjLTkxMjQtZmEzZDZkYmUzN2EwXkEyXkFqcGdeQXVyMTEzOTk1NDk@._V1_QL75_UY562_CR14,0,380,562_.jpg",
+      trailerUrl:"https://www.youtube.com/embed/MFWF9dU5Zc0?si=T7kCT_oaXaC-0AMj?autoplay=1&start=0&rel=0"
     }, {
       id: '2',
       title: 'Midnight Sun',
       category: 'Comedy',
       likes: 2,
       dislikes: 0,
-      posterUrl:"https://m.media-amazon.com/images/M/MV5BZGQ0MzBkMDEtZWU3MC00NGY3LThjOTgtN2I3NzExMTMwNDk4XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_QL75_UX380_CR0,4,380,562_.jpg"
+      posterUrl:"https://m.media-amazon.com/images/M/MV5BZGQ0MzBkMDEtZWU3MC00NGY3LThjOTgtN2I3NzExMTMwNDk4XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+      trailerUrl:"https://www.youtube.com/embed/EWZ7vnNiKDQ?si=TE-m4hoPvqlnDrVq?autoplay=1&start=0&rel=0"
     }, {
       id: '3',
       title: 'Les indestructibles 2',
       category: 'Animation',
       likes: 3,
       dislikes: 1,
-      posterUrl:"https://m.media-amazon.com/images/M/MV5BYzk5ZGMwZWMtODdjZS00MTE3LTgyN2YtZTQwZjk2YmRmMDJmXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_QL75_UY562_CR17,0,380,562_.jpg"
+      posterUrl:"https://m.media-amazon.com/images/M/MV5BYzk5ZGMwZWMtODdjZS00MTE3LTgyN2YtZTQwZjk2YmRmMDJmXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_QL75_UY562_CR17,0,380,562_.jpg",
+      trailerUrl:"https://www.youtube.com/embed/sXsr_7Una_A?si=OI7DDEqtIBlYAnbk?autoplay=1&start=0&rel=0"
     }, {
       id: '4',
       title: 'Sans un bruit',
       category: 'Thriller',
       likes: 6,
       dislikes: 6,
-      posterUrl:"https://m.media-amazon.com/images/M/MV5BYWFlMjY3M2YtYTFlYi00YzE5LWE0ZGItYTE3YWU1ZGU5NWEwXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_QL75_UY562_CR18,0,380,562_.jpg"
+      posterUrl:"https://m.media-amazon.com/images/M/MV5BYWFlMjY3M2YtYTFlYi00YzE5LWE0ZGItYTE3YWU1ZGU5NWEwXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_QL75_UY562_CR18,0,380,562_.jpg",
+      trailerUrl:"https://www.youtube.com/embed/GzFz9Y6Zkos?si=H7pN6nnZ0IRMepD2?autoplay=1&start=0&rel=0"
     }, {
       id: '5',
       title: 'Creed II',
       category: 'Drame',
       likes: 16,
       dislikes: 2,
-      posterUrl:"https://m.media-amazon.com/images/M/MV5BMzkzNjc3ZGYtOTAwYy00ZTY3LTljMGUtZDhkYzkwMjE0YTM0XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+      posterUrl:"https://m.media-amazon.com/images/M/MV5BMzkzNjc3ZGYtOTAwYy00ZTY3LTljMGUtZDhkYzkwMjE0YTM0XkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      trailerUrl:"https://www.youtube.com/embed/AdS5ux3G-Gc?si=_oTJlAxogblSq9AZ?autoplay=1&start=0&rel=0"
     }, {
       id: '6',
       title: 'Pulp Fiction',
       category: 'Thriller',
-      likes: 11,
-      dislikes: 3,
-      posterUrl:"https://m.media-amazon.com/images/M/MV5BMjc2ODkzZDEtOWI3Ny00NzBhLWFlY2QtMWVlOTE4YTRjZGZkXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_QL75_UY562_CR18,0,380,562_.jpg"
-    }, {
-      id: '7',
-      title: 'Pulp Fiction',
-      category: 'Thriller',
-      likes: 12333,
-      dislikes: 32,
-      posterUrl:"https://m.media-amazon.com/images/M/MV5BMjc2ODkzZDEtOWI3Ny00NzBhLWFlY2QtMWVlOTE4YTRjZGZkXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_QL75_UY562_CR18,0,380,562_.jpg"
+      likes: 12344,
+      dislikes: 35,
+      posterUrl:"https://m.media-amazon.com/images/M/MV5BMjc2ODkzZDEtOWI3Ny00NzBhLWFlY2QtMWVlOTE4YTRjZGZkXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_QL75_UY562_CR18,0,380,562_.jpg",
+      trailerUrl:"https://www.youtube.com/embed/WSLMN6g_Od4?si=wUlxsCPw5e2OWMli?autoplay=1&start=0&rel=0"
     }, {
       id: '8',
       title: 'Seven',

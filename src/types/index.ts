@@ -5,4 +5,5 @@ export interface Movie {
     likes: number;
     dislikes: number;
     posterUrl: string;
+    trailer:string
   }
