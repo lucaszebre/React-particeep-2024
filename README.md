@@ -29,7 +29,7 @@ Développer une application web pour afficher et gérer une liste de films avec 
 
 4. Pagination
    - Navigation précédent/suivant
-   - Sélection du nombre d'éléments par page (4, 8, 12)
+   - Sélection du nombre d'éléments par page (4, 8)
 
 ## Bonus
 - Ajout d'images pour les films
